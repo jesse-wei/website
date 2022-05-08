@@ -1,7 +1,7 @@
 body {
     margin: 0;
     background: #020202;
-    cursor: crosshair;
+    /* cursor: crosshair; */
 }
 
 canvas {
@@ -10,7 +10,7 @@ canvas {
 
 h1 {
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
