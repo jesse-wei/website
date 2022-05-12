@@ -1,20 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
-        onload="renderMathInElement(document.body);"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous"> -->
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script> -->
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script> -->
     <title>Binary</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+        </script>
 </head>
+
 <body>
     <h1>The base-10 system</h1>
     <p>You might have heard that we count in base-10, the decimal counting system. What does that mean?</p>
-    <p>Base-10 means there are 10 symbols that we use to count. These symbols are \(\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}\). Note that there are 10 symbols because \(9 - 0 + 1 = 10\).</p>
-    <p>How does our number system work? For decimal numbers, we have a ones place, a tens place, a hundreds place, and a thousands place. 1, 10, 100, and 1000 are all powers of 10: $10^0,\; 10^1,\; 10^2,\; 10^3$, respectively. In this system, 1337 is represented as $1\times10^3+3\times10^2+3\times10^1+7\times10^0$. That is, there is a 1 in the thousands place, a 3 in the hundreds place and in the tens place, and a 7 in the ones place. Decimals are represented in the same way. 2.1337 is $2 \times 10 ^ 0 + 1\times10^{-1}+3\times10^{-2}+3\times10^{-3}+7\times10^{-4}$. This is how we're able to carry numbers when adding. If we do $1337 + 1337$, $7\times 10^0+7\times 10^0=14=1\times 10^1+4\times 10^0$, so we can put a 4 in the ones place and carry the $1$ over to the tens place.</p>
+    <p>Base-10 means there are 10 symbols that we use to count. These symbols are \(\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}\).
+        Note that there are 10 symbols because \(9 - 0 + 1 = 10\).</p>
+    <p>How does our number system work? For decimal numbers, we have a ones place, a tens place, a hundreds place, and a
+        thousands place. 1, 10, 100, and 1000 are all powers of 10: \(10^0,\; 10^1,\; 10^2,\; 10^3\), respectively. In
+        this system, 1337 is represented as \(1\times10^3+3\times10^2+3\times10^1+7\times10^0\). That is, there is a 1
+        in the thousands place, a 3 in the hundreds place and in the tens place, and a 7 in the ones place. Decimals are
+        represented in the same way. 2.1337 is \(2 \times 10 ^ 0 +
+        1\times10^{-1}+3\times10^{-2}+3\times10^{-3}+7\times10^{-4}\). This is how we're able to carry numbers when
+        adding. If we do \(1337 + 1337\), \(7\times 10^0+7\times 10^0=14=1\times 10^1+4\times 10^0\), so we can put a 4
+        in
+        the ones place and carry the \(1\) over to the tens place.</p>
+    <p>
+        Why is this useful? Consider this question: What is the largest 3-digit integer? Clearly, it's 999, which comes
+        from putting the greatest symbol into the 3 slots we have. But what if I ask what the largest 8-digit integer
+        is? You would have to write eight 9's. Surely, there's a simpler, more general way to write the answer?
+    </p>
+    <p>
+        Consider the number that is 1 greater, which is a 1 followed by 8 zeroes, \(1\underbrace{00...0}_{8}\). What is
+        the value of that number? Well, the highest place value in the number with 8 nines is \(10^7\) we start
+        counting from 0 (\(10^0=1\) is the ones place). Then the next place value is \(10^8\), so \(10^8\) is the number
+        that
+        is 1 greater. So the largest 8-digit integer is \(10^8-1=99999999\). Now, you also know that the largest
+        32-digit
+        integer is \(10^{32}-1\) and so on. Let's see an example of how this is useful.
+    </p>
+    <p>You're reading this on a computer right now. Behind the scenes of any computer is code. And code consists of
+        variables and variable types: <code>int</code>, <code>float</code>, <code>double</code>, <code>string</code>,
+        and <code>bool</code>, for example. Let's focus on
+        <code>int</code>. In the C programming language, an <code>unsigned int</code> is a 32-bit data type that stores
+        positive integers and 0. What's the greatest number that can be stored in
+        an <code>unsigned int</code>?
+    </p>
     <script src="../js/katex.js"></script>
 </body>
+
 </html>
