@@ -1,2 +1,2 @@
 # website
- learning HTML/CSS/JS!
+learning HTML/CSS/JS!
