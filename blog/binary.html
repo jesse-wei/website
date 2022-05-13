@@ -13,7 +13,9 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-        </script>
+    </script>
+    <link rel="stylesheet" href="/css/prism.css">
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
 </head>
 
 <body>
@@ -44,14 +46,73 @@
         32-digit
         integer is \(10^{32}-1\) and so on. Let's see an example of how this is useful.
     </p>
+    <h1>Binary</h1>
     <p>You're reading this on a computer right now. Behind the scenes of any computer is code. And code consists of
-        variables and variable types: <code>int</code>, <code>float</code>, <code>double</code>, <code>string</code>,
+        <a href="https://www.tutorialspoint.com/python/python_variable_types.htm">variables and variable types</a>:
+        <code>int</code>, <code>float</code>, <code>double</code>, <code>string</code>,
         and <code>bool</code>, for example. Let's focus on
         <code>int</code>. In the C programming language, an <code>unsigned int</code> is a 32-bit data type that stores
         positive integers and 0. What's the greatest number that can be stored in
         an <code>unsigned int</code>?
     </p>
-    <script src="../js/katex.js"></script>
+    <p>
+        Let's first talk a bit about binary, though you should have a pretty good understanding of it by now. bi- means
+        two, so there are only two symbols in binary: 0 and 1. Here's how we count from \(0_{10}\) to \(7_{10}\) in
+        binary:
+        <code>0</code>, <code>1</code>, <code>10</code>, <code>11</code>, <code>100</code>, <code>101</code>,
+        <code>110</code>, <code>111</code>. \(0_{10}\) is
+        \(0_2\), and \(111_2\) is \(1\times 2^2 + 1\times 2^1 + 1\times 2^0 = 7_{10}\). \(111_2\) is the greatest
+        3-bit number: does this match up with what we learned before? The greatest 3-bit number should be
+        \(2^3-1=7_{10}\), so it works! Addition and
+        <a href="https://www.tutorialspoint.com/two-s-complement">subtraction</a> work the same way as in
+        base-10.
+    </p>
+    <p>
+        So, the greatest number that can be stored in an <code>unsigned int</code> is \(2^{32}-1 = 4294967295_{10} =
+        \text{0xFFFFFFFF}_{16}\), where \(\text{0x}\) denotes <a
+            href="https://learn.sparkfun.com/tutorials/hexadecimal/all">hexadecimal</a>, which is base-16.
+        \(16 = 2^4\), so each hex digit is 4 binary digits.
+    </p>
+    <p>
+        \(\textit{Proof.}\) The greatest 32-digit base-2 value is \(\underbrace{111...1}_{32}\). Consider
+        \(\underbrace{100...0}_{33}\), the number that is 1 greater. Its value is \(1 \times 2^{32}\), hence
+        \(\underbrace{111...1}_{32} = 2^{32} - 1 \). \(\square\)
+    </p>
+    <h1>Application</h1>
+    <p>Why is this <a href="https://www.engadget.com/2015-05-01-boeing-787-dreamliner-software-bug.html">important</a>?
+    </p>
+    <img src="/img/boeing.jpeg">
+    <p>Boeing mishap</p>
+    <p>
+        Now you understand why Boeing 787 airplanes have this issue! It's a simple case of integer overflow. Computer
+        memory is aligned in chunks, and in C and other programming languages, an <code>unsigned int</code> is specified
+        to
+        take up 32 bits or \(\frac{32}{8}=4\) bytes, no matter how large or small. \(4294967295_{10} =
+        \underbrace{111...1}_{32}\) takes up the same amount of space as does \(1_{10} = \underbrace{000...1}_{32}\).
+        Why?
+        If memory weren't aligned, such that each number does not have leading zeroes to fill up the allocated 32 bits,
+        how could you know where one number ends and another begins?
+    </p>
+    <p>
+        Lastly, what would happen if we were to add 1 to \(\underbrace{111...1}_{32}\), having just learned that an
+        <code>unsigned int</code> cannot have a 33<sup>rd</sup> bit? The ALU of the computer adds 1, but the 33<sup>rd</sup>
+        1 is discarded, leaving just \(\underbrace{000...0}_{32} = 0\), an overflow error. Yikes.
+    </p>
+    <pre><code class=language-c>
+        #include &lt;stdio.h>
+
+            int main() {
+                unsigned int int_max = 0xFFFFFFFF; // F == 1111 == 15 in base-10
+                // hence 0xFFFFFFFF is 32 binary bits, all 1's
+                printf("%u\n", int_max);
+                printf("%u\n", int_max + 1);
+            }
+    </code></pre>
+    <pre><code class=language-shell-session>
+        4294967295
+        0
+    </code></pre>
+    <script src="/js/prism.js"></script>
 </body>
 
 </html>
