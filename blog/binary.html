@@ -98,20 +98,15 @@
         <code>unsigned int</code> cannot have a 33<sup>rd</sup> bit? The ALU of the computer adds 1, but the 33<sup>rd</sup>
         1 is discarded, leaving just \(\underbrace{000...0}_{32} = 0\), an overflow error. Yikes.
     </p>
-    <pre><code class=language-c>
-        #include &lt;stdio.h>
-
-            int main() {
-                unsigned int int_max = 0xFFFFFFFF; // F == 1111 == 15 in base-10
-                // hence 0xFFFFFFFF is 32 binary bits, all 1's
-                printf("%u\n", int_max);
-                printf("%u\n", int_max + 1);
-            }
-    </code></pre>
-    <pre><code class=language-shell-session>
-        4294967295
-        0
-    </code></pre>
+    <pre><code class="language-c line-numbers">#include &lt;stdio.h>
+int main() {
+    unsigned int int_max = 0xFFFFFFFF; // F == 1111 == 15 in base-10
+    // hence 0xFFFFFFFF is 32 binary bits, all 1's
+    printf("%u\n", int_max);
+    printf("%u\n", int_max + 1);
+}</code></pre>
+    <pre><code class="language-shell-session line-numbers">4294967295
+0</code></pre>
     <script src="/js/prism.js"></script>
 </body>
 
