@@ -13,7 +13,8 @@
 </head>
 
 <body>
-    <h1>\(e^{ix} = \cos(x)+i\sin(x)\)</h1>
+    <h1>2 proofs of \(e^{ix} = \cos(x)+i\sin(x)\)</h1>
+    <h3>Proof by <a href="https://en.wikipedia.org/wiki/Taylor_series">Taylor series</a></h3>
     <p>
         Here are the Taylor expansions for \(\cos(x), \sin(x),\) and \(e^y\). Here, I'm using \(y\) as a dummy variable
         so it isn't confused with \(x\).
@@ -36,18 +37,26 @@
         \end{aligned}$$
     </p>
     <p>
-        Also, the magnitude of \(e^{ix}\) is \(1\) for all \(x\):
+        Also, the magnitude of \(e^{ix}\) is \(1\) for all real \(x\):
         $$|e^{ix}| = |\cos(x) + i\sin(x)| = \sqrt{\cos^2(x) + \sin^2(x)} = \sqrt{1} = 1 \quad \blacksquare$$
         noting that we can find the magnitude of \(e^{ix}\) on the complex plane using the distance formula because we
-        have shown that \(e^{ix}\) is a complex number, and we use distance formula to find magnitude of complex
+        have shown that \(e^{ix}\) is a complex number \(a+bi\) (where \(a=\cos(x)\) and \(b=\sin(x)\)), and we use distance formula to find magnitude of complex
         numbers:
     </p>
     <p>
         <img class="resize center-horizontal" src="/img/blog/magnitude-complex-num.jpeg" alt="ACT 74H Math # 57">
     </p>
     <p>
-    <img class="resize center-horizontal" src="/img/blog/magnitude-complex-num-sol.png" alt="ACT 74H Math #57 Solution">
+    <img class="resize center-horizontal" src="/img/blog/magnitude-complex-num-sol.jpeg" alt="ACT 74H Math #57 Solution">
     </p>
+
+    <h3>Proof by differential equation</h3>
+    <p>Consider the following differential equation: $$\frac{df(x)}{dx} = if(x)$$</p>
+    <p>One solution is \(f(x) = e^{ix}\) because $$\frac{de^{ix}}{dx} = ie^{ix}$$</p>
+    <p>Another solution is \(f(x) = \cos(x)+i\sin(x)\) because$$\frac{d}{dx}(\cos(x)+i\sin(x)) = -\sin(x)+i\cos(x) = i(\cos(x)+i\sin(x))$$</p>
+    <p>and both functions satisfy \(f(0) = 1\): $$f(0) = e^{i(0)} = \cos(0) + i\sin(0) = 1$$</p>
+    <p>Hence, the functions are identical; that is, \(e^{ix} = \cos(x)+i\sin(x) \quad \blacksquare\)</p>
+
 
 </body>
 
