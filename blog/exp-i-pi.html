@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proof that e^(i*pi) = cos(x) + isin(x)</title>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+        </script>
+    <link rel="stylesheet" href="css/exp.css">
+</head>
+
+<body>
+    <h1>\(e^{ix} = \cos(x)+i\sin(x)\)</h1>
+    <p>
+        Here are the Taylor expansions for \(\cos(x), \sin(x),\) and \(e^y\). Here, I'm using \(y\) as a dummy variable
+        so it isn't confused with \(x\).
+        $$\begin{aligned}
+        \cos(x) &= \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!} x^{2n} &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} -
+        \frac{x^6}{6!} + \cdots\\
+        \sin(x) &= \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!} x^{2n+1} &= x - \frac{x^3}{3!} + \frac{x^5}{5!} -
+        \frac{x^7}{7!} + \cdots\\
+        e^y &= \sum_{n=0}^{\infty} \frac{y^n}{n!} &= 1 + y + \frac{y^2}{2!} + \frac{y^3}{3!} + \cdots\\
+        \end{aligned}$$
+    </p>
+    <p>
+        Letting \(y = ix\), we get
+        $$\begin{aligned}
+        e^{ix} = \sum_{n=0}^{\infty} \frac{(ix)^n}{n!} &= 1 + ix - \frac{x^2}{2!} - i \frac{x^3}{3!} + \frac{x^4}{4!} +
+        i \frac{x^5}{5!} - \frac{x^6}{6!} + \cdots\\
+        &= \left(1 - \frac{x^2}{2!} + \frac{x^4}{4!} + \cdots\right) + i\left(x - \frac{x^3}{3!} + \frac{x^5}{5!} +
+        \cdots\right)\\
+        &= \cos(x) + i\sin(x) \quad \blacksquare
+        \end{aligned}$$
+    </p>
+    <p>
+        Also, the magnitude of \(e^{ix}\) is \(1\) for all \(x\):
+        $$|e^{ix}| = |\cos(x) + i\sin(x)| = \sqrt{\cos^2(x) + \sin^2(x)} = \sqrt{1} = 1 \quad \blacksquare$$
+        noting that we can find the magnitude of \(e^{ix}\) on the complex plane using the distance formula because we
+        have shown that \(e^{ix}\) is a complex number, and we use distance formula to find magnitude of complex
+        numbers:
+    </p>
+    <p>
+        <img class="resize center-horizontal" src="/img/blog/magnitude-complex-num.jpeg" alt="ACT 74H Math # 57">
+    </p>
+    <p>
+    <img class="resize center-horizontal" src="/img/blog/magnitude-complex-num-sol.png" alt="ACT 74H Math #57 Solution">
+    </p>
+
+</body>
+
+</html>
