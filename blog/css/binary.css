@@ -5,3 +5,7 @@ code {
     border-radius: 4px;
     /* padding: 2px 4px; */
 }
+
+.center-text {
+    text-align: center;
+}
