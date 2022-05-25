@@ -11,11 +11,10 @@
     </script>
     <link rel="stylesheet" href="/css/prism.css">
     <link rel="stylesheet" href="css/binary.css">
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+    <link rel="stylesheet" href="/css/latex.css">
 </head>
 
 <body>
-    <h3>This page is currently unstyled (TODO: style this page), as you can see.</h3>
     <h1>The base-10 system</h1>
     <p>You might have heard that we count in base-10, the decimal counting system. What does that mean?</p>
     <p>Base-10 means there are 10 symbols that we use to count. These symbols are \(\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}\).
@@ -36,18 +35,16 @@
     </p>
     <p>
         Consider the number that is 1 greater, which is a 1 followed by 8 zeroes, \(1\underbrace{00...0}_{8}\). What is
-        the value of that number? Well, the highest place value in the number with 8 nines is \(10^7\) because we start
-        counting from 0 (\(10^0=1\) is the ones place). 
+        the value of that number?
     </p>
     <p class="center-text">
-        ☣ A very common mistake would be to say the highest place value in \(1\underbrace{000...0}_{8}\) is \(10^9\) because there are 9 digits.
+        ☣ A very common mistake with 0-indexing would be to say the highest place value in \(1\underbrace{000...0}_{8}\) is \(10^9\) because there are 9 digits.
     </p>
     <p class="center-text">
-        Exercise: write out the place values of each digit to make sure you understand that the \(1\) has value \(1 \times 10^8\).
+        Exercise: write out the place values of each digit to make sure you understand how the \(1\) has value \(1 \times 10^8\).
     </p>
     <p>
-        Then \(10^8\) is the number that
-        is 1 greater. So the largest 8-digit integer is \(10^8-1=99999999\). Now, you also know that the largest
+        Then the largest 8-digit integer is \(10^8-1=99999999\). Now, you also know that the largest
         32-digit
         integer is \(10^{32}-1\) and so on. Let's see an example of how this is useful.
     </p>
@@ -73,9 +70,12 @@
         base-10.
     </p>
     <p>
-        So, the greatest number that can be stored in an <code>unsigned int</code> is \(2^{32}-1 = 4294967295_{10} =
+        Then the greatest number that can be stored in an <code>unsigned int</code> is \(2^{32}-1 = 4294967295_{10} =
         \text{0xFFFFFFFF}_{16}\), where \(\text{0x}\) denotes <a
-            href="https://learn.sparkfun.com/tutorials/hexadecimal/all">hexadecimal</a>, which is base-16.
+            href="https://learn.sparkfun.com/tutorials/hexadecimal/all">hexadecimal</a>.
+            <label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+            <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+            <span class="sidenote">Base-16, \([0,9] \cup [a,f]\)</span>
         \(16 = 2^4\), so each hex digit is 4 binary digits.
     </p>
     <p>
@@ -87,7 +87,6 @@
     <p>Why is this <a href="https://www.engadget.com/2015-05-01-boeing-787-dreamliner-software-bug.html">important</a>?
     </p>
     <img src="/img/blog/boeing.jpeg">
-    <p>Boeing mishap</p>
     <p>
         Now you understand why Boeing 787 airplanes have this issue! It's a simple case of integer overflow. Computer
         memory is aligned in chunks, and in C and other programming languages, an <code>unsigned int</code> is specified
