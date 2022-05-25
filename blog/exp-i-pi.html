@@ -10,52 +10,70 @@
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
         </script>
     <link rel="stylesheet" href="css/exp.css">
+    <link rel="stylesheet" href="https://latex.now.sh/style.css">
 </head>
 
 <body>
     <h1>2 proofs of \(e^{ix} = \cos(x)+i\sin(x)\)</h1>
-    <h3>Proof by <a href="https://en.wikipedia.org/wiki/Taylor_series">Taylor series</a></h3>
+    <div class="lemma">By <a href="https://en.wikipedia.org/wiki/Taylor_series">Taylor series</a></div>
+    <div class="proof">
+        Here are the Taylor expansions for \(\cos(x), \sin(x),\) and \(e^y\).
+        <label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+        <span class="sidenote">Here, \(y\) is a dummy variable.</span>
+        <p>
+            $$\begin{aligned}
+            \cos(x) &= \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!} x^{2n} &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} -
+            \frac{x^6}{6!} + \cdots\\
+            \sin(x) &= \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!} x^{2n+1} &= x - \frac{x^3}{3!} + \frac{x^5}{5!} -
+            \frac{x^7}{7!} + \cdots\\
+            e^y &= \sum_{n=0}^{\infty} \frac{y^n}{n!} &= 1 + y + \frac{y^2}{2!} + \frac{y^3}{3!} + \frac{y^4}{4!} +
+            \cdots\\
+            \end{aligned}$$
+        </p>
+        <p>
+            Letting \(y = ix\), we get
+            <label for="sn-2" class="sidenote-toggle sidenote-number"></label>
+            <input type="checkbox" id="sn-2" class="sidenote-toggle" />
+            <span class="sidenote">Note that the coefficients are powers of \(i\), so they follow the pattern \(1, i,
+                -1, -i, 1 \ldots\).</span>
+            $$\begin{aligned}
+            e^{ix} = \sum_{n=0}^{\infty} \frac{(ix)^n}{n!} &= 1 + ix - \frac{x^2}{2!} - i \frac{x^3}{3!} +
+            \frac{x^4}{4!} +
+            i \frac{x^5}{5!} - \frac{x^6}{6!} + \cdots\\
+            &= \left(1 - \frac{x^2}{2!} + \frac{x^4}{4!} + \cdots\right) + i\left(x - \frac{x^3}{3!} + \frac{x^5}{5!} +
+            \cdots\right)\\
+            &= \cos(x) + i\sin(x)
+            \end{aligned}$$
+        </p>
+    </div>
     <p>
-        Here are the Taylor expansions for \(\cos(x), \sin(x),\) and \(e^y\). Here, I'm using \(y\) as a dummy variable
-        so it isn't confused with \(x\).
-        $$\begin{aligned}
-        \cos(x) &= \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!} x^{2n} &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} -
-        \frac{x^6}{6!} + \cdots\\
-        \sin(x) &= \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!} x^{2n+1} &= x - \frac{x^3}{3!} + \frac{x^5}{5!} -
-        \frac{x^7}{7!} + \cdots\\
-        e^y &= \sum_{n=0}^{\infty} \frac{y^n}{n!} &= 1 + y + \frac{y^2}{2!} + \frac{y^3}{3!} + \frac{y^4}{4!} + \cdots\\
-        \end{aligned}$$
-    </p>
-    <p>
-        Letting \(y = ix\), we get
-        $$\begin{aligned}
-        e^{ix} = \sum_{n=0}^{\infty} \frac{(ix)^n}{n!} &= 1 + ix - \frac{x^2}{2!} - i \frac{x^3}{3!} + \frac{x^4}{4!} +
-        i \frac{x^5}{5!} - \frac{x^6}{6!} + \cdots\\
-        &= \left(1 - \frac{x^2}{2!} + \frac{x^4}{4!} + \cdots\right) + i\left(x - \frac{x^3}{3!} + \frac{x^5}{5!} +
-        \cdots\right)\\
-        &= \cos(x) + i\sin(x) \quad \blacksquare
-        \end{aligned}$$
-    </p>
-    <p>
-        Also, the magnitude of \(e^{ix}\) is \(1\) for all real \(x\):
-        $$|e^{ix}| = |\cos(x) + i\sin(x)\:| = \sqrt{\cos^2(x) + \sin^2(x)} = \sqrt{1} = 1 \quad \blacksquare$$
-        noting that we can find the magnitude of \(e^{ix}\) on the complex plane using the distance formula because we
-        have shown that \(e^{ix}\) is a complex number \(a+bi\) (where \(a=\cos x\) and \(b=\sin x\)), and we use distance formula to find magnitude of complex
-        numbers:
+        Also, the <a href="https://en.wikipedia.org/wiki/Complex_number#Conjugate">magnitude</a> of \(e^{ix}\) is \(1\)
+        for all real \(x\):
+        <label for="sn-3" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-3" class="sidenote-toggle" />
+        <span class="sidenote">We have shown that \(e^{ix}\) is a complex number \(a+bi\), where \(a=\cos x\) and
+            \(b=\sin x\). The magnitude of a complex number is its distance, on the complex plane, from \((0, 0)\). We
+            find this distance using the distance formula, as shown in the ACT question.</span>
+        $$|e^{ix}| = |\cos(x) + i\sin(x)\:| = \sqrt{\cos^2(x) + \sin^2(x)} = \sqrt{1} = 1$$
     </p>
     <p>
         <img class="resize center-horizontal" src="/img/blog/magnitude-complex-num.jpeg" alt="ACT 74H Math # 57">
     </p>
     <p>
-    <img class="resize center-horizontal" src="/img/blog/magnitude-complex-num-sol.jpeg" alt="ACT 74H Math #57 Solution">
+        <img class="resize center-horizontal" src="/img/blog/magnitude-complex-num-sol.jpeg"
+            alt="ACT 74H Math #57 Solution">
     </p>
 
-    <h3>Proof by differential equation \(\frac{df}{dx} = if(x)\)</h3>
-    <p>Consider the following differential equation: $$\frac{df(x)}{dx} = if(x)$$</p>
-    <p>One solution is \(f(x) = e^{ix}\) because $$\frac{d}{dx}e^{ix} = ie^{ix}$$</p>
-    <p>Another solution is \(f(x) = \cos(x)+i\sin(x)\) because$$\frac{d}{dx}\left(\cos(x)+i\sin(x)\right) = -\sin(x)+i\cos(x) = i\left(\cos(x)+i\sin(x)\right)$$</p>
-    <p>and both functions satisfy \(f(0) = 1\): $$f(0) = e^{i(0)} = \cos(0) + i\sin(0) = 1$$</p>
-    <p>Hence, the functions are identical; that is, \(e^{ix} = \cos(x)+i\sin(x) \quad \blacksquare\)</p>
+    <div class="lemma">By differential equation \(\frac{df}{dx}=if(x)\)</div>
+    <div class="proof">
+        Consider the following differential equation: $$\frac{df(x)}{dx} = if(x)$$
+        <p>One solution is \(f(x) = e^{ix}\) because $$\frac{d}{dx}e^{ix} = ie^{ix}$$</p>
+        <p>Another solution is \(f(x) = \cos(x)+i\sin(x)\) because$$\frac{d}{dx}\left(\cos(x)+i\sin(x)\right) =
+            -\sin(x)+i\cos(x) = i\left(\cos(x)+i\sin(x)\right)$$</p>
+        <p>and both functions satisfy \(f(0) = 1\): $$f(0) = e^{i(0)} = \cos(0) + i\sin(0) = 1$$</p>
+        <p>Hence, the functions are identical; that is, \(e^{ix} = \cos(x)+i\sin(x)\)</p>
+    </div>
 
 
 </body>

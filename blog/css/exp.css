@@ -8,3 +8,7 @@ img.resize {
     width: 500px;
     height: auto;
 }
+
+.center-text{
+    text-align: center;
+}
