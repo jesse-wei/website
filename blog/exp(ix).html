@@ -35,10 +35,10 @@
             Letting \(y = ix\), we get
             <label for="sn-2" class="sidenote-toggle sidenote-number"></label>
             <input type="checkbox" id="sn-2" class="sidenote-toggle" />
-            <span class="sidenote">Note that the coefficients are powers of \(i\), so they follow the pattern \(1, i,
-                -1, -i, 1 \ldots\).</span>
+            <span class="sidenote">It's just the \(e^x\) expansion but with the powers of \(i\) \((1, i, -1, -i, 1, \ldots)\) as coefficients. We note that the only terms with \( \pm i\) will have \(n\) odd since \(i^1=-i^3=i\), and vice versa for the terms without \(i\). Also, we note that any two terms that are 2 apart will have opposite signs since they differ by \(i^2=-1\).
+            </span>
             $$\begin{aligned}
-            e^{ix} = \sum_{n=0}^{\infty} \frac{(ix)^n}{n!} &= 1 + ix - \frac{x^2}{2!} - i \frac{x^3}{3!} +
+            e^{ix} = \sum_{n=0}^{\infty} \frac{(ix)^n}{n!} = \sum_{n=0}^{\infty}i^n\frac{x^n}{n!} &= 1 + ix - \frac{x^2}{2!} - i \frac{x^3}{3!} +
             \frac{x^4}{4!} +
             i \frac{x^5}{5!} - \frac{x^6}{6!} + \cdots\\
             &= \left(1 - \frac{x^2}{2!} + \frac{x^4}{4!} + \cdots\right) + i\left(x - \frac{x^3}{3!} + \frac{x^5}{5!} +
