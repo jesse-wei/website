@@ -1,0 +1,325 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11172,        315]
+NotebookOptionsPosition[      9385,        274]
+NotebookOutlinePosition[      9779,        290]
+CellTagsIndexPosition[      9736,        287]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"1", "+", "x"}], ")"}], "^", "0"}], "]"}]], "Input",
+ CellChangeTimes->{{3.86270207674056*^9, 3.862702085928678*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"68d44f31-84c1-48c8-bc0d-1a63ea2adf4d"],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.8627020865223217`*^9},
+ CellLabel->"Out[26]=",ExpressionUUID->"490f72f9-2e40-4f9f-a88b-cd9da2a53a36"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"1", "+", "x"}], ")"}], "^", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.86270208727969*^9, 3.862702091456208*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"cf021b31-dac6-4d31-b6ac-507b479c5e3a"],
+
+Cell[BoxData[
+ RowBox[{"1", "+", "x"}]], "Output",
+ CellChangeTimes->{3.862702091824629*^9},
+ CellLabel->"Out[27]=",ExpressionUUID->"8bc099d6-08ea-4f4d-bc77-b8a545d039bd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"1", "+", "x"}], ")"}], "^", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.862702092475733*^9, 3.8627020973284883`*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"48e01df3-03ca-4af9-9e43-5be6e54207d4"],
+
+Cell[BoxData[
+ RowBox[{"1", "+", 
+  RowBox[{"2", " ", "x"}], "+", 
+  SuperscriptBox["x", "2"]}]], "Output",
+ CellChangeTimes->{3.862702097661202*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"891abe09-a232-467a-a432-313150e02195"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"1", "+", "x"}], ")"}], "^", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.86270209827309*^9, 3.862702102554537*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"7cc62e2b-3771-4731-bf74-bbde76a71f7f"],
+
+Cell[BoxData[
+ RowBox[{"1", "+", 
+  RowBox[{"3", " ", "x"}], "+", 
+  RowBox[{"3", " ", 
+   SuperscriptBox["x", "2"]}], "+", 
+  SuperscriptBox["x", "3"]}]], "Output",
+ CellChangeTimes->{3.8627021028061113`*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"549323d0-4de5-4726-bb51-479ea3e52307"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"1", "+", "x"}], ")"}], "^", "4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.862702103466715*^9, 3.862702110651063*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"f81f429a-9f17-42fa-bbf2-22db1dcca85f"],
+
+Cell[BoxData[
+ RowBox[{"1", "+", 
+  RowBox[{"4", " ", "x"}], "+", 
+  RowBox[{"6", " ", 
+   SuperscriptBox["x", "2"]}], "+", 
+  RowBox[{"4", " ", 
+   SuperscriptBox["x", "3"]}], "+", 
+  SuperscriptBox["x", "4"]}]], "Output",
+ CellChangeTimes->{3.862702110969932*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"8a5bdbf9-963d-469a-aa9e-0f789219cc03"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"1", "+", "x"}], ")"}], "^", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8627021133516073`*^9, 3.862702116570574*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"fa37e335-420c-453e-b5cc-7f66f8dee8ea"],
+
+Cell[BoxData[
+ RowBox[{"1", "+", 
+  RowBox[{"5", " ", "x"}], "+", 
+  RowBox[{"10", " ", 
+   SuperscriptBox["x", "2"]}], "+", 
+  RowBox[{"10", " ", 
+   SuperscriptBox["x", "3"]}], "+", 
+  RowBox[{"5", " ", 
+   SuperscriptBox["x", "4"]}], "+", 
+  SuperscriptBox["x", "5"]}]], "Output",
+ CellChangeTimes->{3.86270211695574*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"2da94755-9071-4584-b0b1-1b939e4f59a7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EmbedCode", "[", 
+  RowBox[{
+   RowBox[{"CloudDeploy", "[", 
+    RowBox[{"Manipulate", "[", 
+     RowBox[{
+      RowBox[{"Expand", "[", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", "x"}], ")"}], "^", "n"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "n", ",", "0", ",", "1", ",", "2", ",", "3", ",", "4", ",", "5"}], 
+       "}"}]}], "]"}], "]"}], ",", 
+   RowBox[{"Permissions", "->", "\"\<Public\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.862702137995428*^9, 3.8627021781314487`*^9}, {
+  3.862702236869956*^9, 3.862702280670039*^9}, {3.862702432877098*^9, 
+  3.862702436398168*^9}},
+ CellLabel->"In[35]:=",ExpressionUUID->"30d8a8ac-06aa-4891-8c90-b4039cd7f192"],
+
+Cell[BoxData[
+ InterpretationBox[
+  FrameBox[
+   PanelBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\<\"Embeddable Code\"\>", "ControlStyle",
+         StripOnInput->False,
+         FontSize->Larger,
+         FontWeight->Bold,
+         FontColor->GrayLevel[0.3]]},
+       {
+        StyleBox["\<\"Use the code below to call the Wolfram Cloud function \
+from HTML:\"\>",
+         StripOnInput->False,
+         FontColor->RGBColor[0.23, 0.23, 0.23]]},
+       {
+        FrameBox[
+         TagBox[GridBox[{
+            {
+             TagBox[GridBox[{
+                {
+                 TagBox[GridBox[{
+                    {
+                    StyleBox["\<\"Code\"\>", "ControlStyle",
+                    StripOnInput->False,
+                    FontWeight->Bold,
+                    FontColor->RGBColor[0.33, 0.33, 0.33]]},
+                    {
+                    StyleBox["\<\"\"\>",
+                    StripOnInput->False,
+                    FontColor->RGBColor[0.33, 0.33, 0.33]]}
+                   },
+                   DefaultBaseStyle->"Column",
+                   GridBoxAlignment->{"Columns" -> {{Left}}},
+                   
+                   GridBoxItemSize->{
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+                  "Column"], 
+                 ItemBox[
+                  ButtonBox["\<\"Copy to Clipboard\"\>",
+                   
+                   Appearance:>FEPrivate`FrontEndResource[
+                    "FEExpressions", "GrayButtonNinePatchAppearance"],
+                   BaseStyle->"DialogStyle",
+                   
+                   ButtonFunction:>CopyToClipboard[
+                    "<iframe \
+src=\"https://www.wolframcloud.com/obj/2f35fa9b-369c-4398-99ec-6102774e56fd?_\
+embed=iframe\" width=\"600\" height=\"800\"></iframe>"],
+                   Evaluator->Automatic,
+                   FrameMargins->{{10, 10}, {0, 0}},
+                   ImageSize->Automatic,
+                   Method->"Queued"],
+                  Alignment->Right,
+                  StripOnInput->False]}
+               },
+               AutoDelete->False,
+               GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+               GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Fit}}}],
+              "Grid"]},
+            {
+             FrameBox[
+              PaneBox[Cell["\<\
+<iframe src=\"https://www.wolframcloud.com/obj/2f35fa9b-369c-4398-99ec-\
+6102774e56fd?_embed=iframe\" width=\"600\" height=\"800\"></iframe>\
+\>",
+                Editable->False,
+                Deployed->False,ExpressionUUID->
+                "2474e762-a527-4bec-aefe-a1be600d14dd"],
+               AppearanceElements->{},
+               ImageSize->{
+                 Scaled[1], 60},
+               Scrollbars->Automatic],
+              Background->GrayLevel[1],
+              BaseStyle->"StandardForm",
+              FrameStyle->RGBColor[0.69, 0.69, 0.69],
+              StripOnInput->False]}
+           },
+           DefaultBaseStyle->"Column",
+           GridBoxAlignment->{"Columns" -> {{Left}}},
+           GridBoxItemSize->{"Columns" -> {{Fit}}, "Rows" -> {{Fit}}},
+           GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {0.2, {0.5}}}],
+          "Column"],
+         Background->RGBColor[0.96, 0.96, 0.96],
+         FrameMargins->{{14, 14}, {14, 10}},
+         FrameStyle->RGBColor[0.69, 0.69, 0.69],
+         StripOnInput->False]}
+      },
+      DefaultBaseStyle->"Column",
+      GridBoxAlignment->{"Columns" -> {{Left}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+      GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {0.3, 0.4, 0.8, 1.5}}],
+     "Column"],
+    Background->RGBColor[0.87, 0.87, 0.87],
+    BaseStyle->{"Deploy"},
+    ImageSize->630],
+   Background->RGBColor[0.87, 0.87, 0.87],
+   FrameMargins->{{2, 2}, {1, 1}},
+   FrameStyle->RGBColor[0.76, 0.76, 0.76],
+   RoundingRadius->6,
+   StripOnInput->False],
+  EmbeddingObject[<|
+   "EnvironmentName" -> "HTML", 
+    "CodeSection" -> <|
+     "Content" -> 
+      "<iframe src=\"https://www.wolframcloud.com/obj/2f35fa9b-369c-4398-99ec-\
+6102774e56fd?_embed=iframe\" width=\"600\" height=\"800\"></iframe>", "Title" -> 
+      Automatic, "Filename" -> "cloudembed.html"|>, "CloudObject" -> 
+    CloudObject[
+     "https://www.wolframcloud.com/obj/2f35fa9b-369c-4398-99ec-6102774e56fd"]|>\
+]]], "Output",
+ CellChangeTimes->{{3.862702178551462*^9, 3.8627021897680817`*^9}, 
+   3.862702245082033*^9, 3.862702284680848*^9, 3.8627024381675243`*^9},
+ CellLabel->"Out[35]=",ExpressionUUID->"3b84cad2-d80a-4338-8731-1bf58db7d2ed"]
+}, Open  ]]
+},
+WindowSize->{720, 872},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ec79a42d-fc93-460d-97ae-dd6c48607909"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 275, 6, 30, "Input",ExpressionUUID->"68d44f31-84c1-48c8-bc0d-1a63ea2adf4d"],
+Cell[858, 30, 151, 2, 34, "Output",ExpressionUUID->"490f72f9-2e40-4f9f-a88b-cd9da2a53a36"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1046, 37, 275, 6, 30, "Input",ExpressionUUID->"cf021b31-dac6-4d31-b6ac-507b479c5e3a"],
+Cell[1324, 45, 171, 3, 34, "Output",ExpressionUUID->"8bc099d6-08ea-4f4d-bc77-b8a545d039bd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1532, 53, 278, 6, 30, "Input",ExpressionUUID->"48e01df3-03ca-4af9-9e43-5be6e54207d4"],
+Cell[1813, 61, 228, 5, 34, "Output",ExpressionUUID->"891abe09-a232-467a-a432-313150e02195"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2078, 71, 275, 6, 30, "Input",ExpressionUUID->"7cc62e2b-3771-4731-bf74-bbde76a71f7f"],
+Cell[2356, 79, 288, 7, 34, "Output",ExpressionUUID->"549323d0-4de5-4726-bb51-479ea3e52307"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2681, 91, 276, 6, 30, "Input",ExpressionUUID->"f81f429a-9f17-42fa-bbf2-22db1dcca85f"],
+Cell[2960, 99, 344, 9, 34, "Output",ExpressionUUID->"8a5bdbf9-963d-469a-aa9e-0f789219cc03"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3341, 113, 278, 6, 30, "Input",ExpressionUUID->"fa37e335-420c-453e-b5cc-7f66f8dee8ea"],
+Cell[3622, 121, 403, 11, 34, "Output",ExpressionUUID->"2da94755-9071-4584-b0b1-1b939e4f59a7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4062, 137, 727, 18, 52, "Input",ExpressionUUID->"30d8a8ac-06aa-4891-8c90-b4039cd7f192"],
+Cell[4792, 157, 4577, 114, 230, "Output",ExpressionUUID->"3b84cad2-d80a-4338-8731-1bf58db7d2ed"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
