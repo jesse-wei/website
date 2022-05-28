@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pascal's triangle</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+        </script>
+    <link rel="stylesheet" href="/css/latex.css">
+    <link rel="stylesheet" href="css/exp.css">
+</head>
+
+<body>
+    <h1>Symmetries between $\sin$ and $\cos$</h1>
+    <p class="author"><br>May 28, 2022</p>
+    <div class="abstract">
+        <h2>Introduction</h2>
+        <p>This article shows some of the symmetries between sine and cosine.</p>
+    </div>
+    <p>
+        We must start with the most basic definition. Given $\theta$, $\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}$ and $\cos \theta = \frac{\text{adjacent}}{\text{hypotenuse}}$.
+    </p>
+    <p>
+        But it's definitely best to visualize:
+    </p>
+    <p>
+        From the definitions, we get that the green side is $h\cos \theta$ because $\cos \theta = \frac{\text{adjacent}}{\text{hypotenuse}} \implies \text{adjacent} = h\cos \theta$. Similarly, the blue side is $h\sin \theta$. Letting $h=1$, the adjacent side is just $\cos \theta$, and the opposite side is $\sin \theta$. With this setup, we can show Lemma 1.
+    </p>
+    <div class="lemma">
+        $\cos \theta = \sin(\frac{\pi}{2} - \theta)$ and $\sin \theta = \cos(\frac{\pi}{2} - \theta)$ for arbitrary $\theta$.
+    </div>
+    <div class="proof">
+        Consider $x=\frac{\pi}{2}-\theta$. In the triangle with hypotenuse 1, the green side is $\cos \theta = \frac{\text{adjacent}}{1}$. It is also $\sin x = \frac{\text{opposite}}{1}$. Hence, $\cos \theta = \sin(\frac{\pi}{2} - \theta)$. Similar reasoning holds for the latter identity and for arbitrary $h$.
+    </div>
+</body>
+
+</html>
