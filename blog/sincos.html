@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pascal's triangle</title>
+    <title>Sine and cosine</title>
     <script>
         MathJax = {
             tex: {
@@ -30,12 +30,17 @@
         <h2>Introduction</h2>
         <p>This article shows some of the symmetries between sine and cosine.</p>
     </div>
+    <h2>Geometry</h2>
     <p>
-        We must start with the most basic definition. Given $\theta$, $\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}$ and $\cos \theta = \frac{\text{adjacent}}{\text{hypotenuse}}$.
+        We must start with the most basic definition.
     </p>
+    <div class="lemma">
+        In a right triangle, given angle $\theta$, $\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}$ and $\cos \theta = \frac{\text{adjacent}}{\text{hypotenuse}}$.
+    </div>
     <p>
         But it's definitely best to visualize:
     </p>
+    <img src="/img/blog/sincos-definition.jpg" alt="basic geometric definition of sine and cosine" class="center">
     <p>
         From the definitions, we get that the green side is $h\cos \theta$ because $\cos \theta = \frac{\text{adjacent}}{\text{hypotenuse}} \implies \text{adjacent} = h\cos \theta$. Similarly, the blue side is $h\sin \theta$. Letting $h=1$, the adjacent side is just $\cos \theta$, and the opposite side is $\sin \theta$. With this setup, we can show Lemma 1.
     </p>
@@ -43,8 +48,100 @@
         $\cos \theta = \sin(\frac{\pi}{2} - \theta)$ and $\sin \theta = \cos(\frac{\pi}{2} - \theta)$ for arbitrary $\theta$.
     </div>
     <div class="proof">
-        Consider $x=\frac{\pi}{2}-\theta$. In the triangle with hypotenuse 1, the green side is $\cos \theta = \frac{\text{adjacent}}{1}$. It is also $\sin x = \frac{\text{opposite}}{1}$. Hence, $\cos \theta = \sin(\frac{\pi}{2} - \theta)$. Similar reasoning holds for the latter identity and for arbitrary $h$.
+        Consider $\alpha=\frac{\pi}{2}-\theta$. In the triangle with hypotenuse 1, the green side is $\cos \theta = \frac{\text{adjacent}}{1}$. It is also $\sin \alpha = \frac{\text{opposite}}{1}$. Hence, $\cos \theta = \sin(\frac{\pi}{2} - \theta)$. Similar reasoning holds for the latter identity and for arbitrary $h$.
     </div>
+    <img src="/img/blog/sincos-identity-90.jpg" alt="geometric proof of separation by 90 degrees" class="center">
+    <p>
+        Here's an embedded Desmos graph where you can see the identity for yourself:
+    </p>
+    <iframe class="center" src="https://www.desmos.com/calculator/clx5qaa6f1" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
+    <p>
+        Back to <b>Lemma 1</b>, why should the basic definition be limited to a static right triangle? What about a dynamic right triangle, perhaps one like this:
+        <label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+        <span class="sidenote">Note that there is no magic going on here. There's nothing in Desmos that specifically generates an arbitrary right triangle - this graph uses only the sine and cosine knowledge shown above!</span>
+    </p>
+    <iframe class="center" src="https://www.desmos.com/calculator/pqzlvx8vmt" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
+    <p>
+        In this graph, the x coordinates always involve $\cos \theta$, and the y coordinates always involve $\sin \theta$. Thinking of the black line as a vector
+        <label for="sn-2" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-2" class="sidenote-toggle" />
+        <span class="sidenote">Since we can vary its length $r$ and its angle $t$</span>
+        , we see that to get the horizontal component of the vector, we multiply its length by $\cos \theta$. To get its vertical component, we multiply its length by $\sin \theta$. In other words, $\cos \theta$ projects to $x$, and $\sin \theta$ projects to $y$!
+    </p>
+    <p>
+        This applies to the graph of a circle as well. Note that, again, $x$ always goes with $\cos \theta$, and $y$ always goes with $\sin \theta$.
+    </p>
+    <iframe class="center" src="https://www.desmos.com/calculator/xoisqqwftl" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
+    <!-- <iframe id="output-frame" class="center" sandbox="allow-pointer-lock allow-same-origin allow-scripts" src="https://www.kasandbox.org/computer-programming/exec/pjs?lang=en&v=220603-0756-497e28a3961b&host=www.khanacademy.org" data-src="https://www.kasandbox.org/computer-programming/exec/pjs?lang=en" style="width: 100%; height: 402px;"></iframe> -->
+    <p>
+        To make this idea even more clear, you should take a look at this <a href="https://www.khanacademy.org/computer-programming/circle/4597064320155648">circle animation on Khan Academy</a>.
+        <label for="sn-3" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-3" class="sidenote-toggle" />
+        <span class="sidenote"><img src="/img/blog/sincos-animation.jpg"></span>
+    </p>
+    <h2>Algebra</h2>
+    <p>
+        There is an algebraic symmetry that is, in my opinion, as beautiful as the symmetries above. This symmetry also allows us to prove <a href="exp(ix).html">$e^{ix} = \cos x + i\sin x$</a> for any $x$, which is also pretty beautiful.
+    </p>
+    <div class="lemma">
+        $\cos x = 1 - \frac{x^2}{2} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots$, and $\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots$
+        <label for="sn-4" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-4" class="sidenote-toggle" />
+        <span class="sidenote">Note that the cosine expansion contains only even powers of $x$ (including $x^0 = 1$) divided by even factorials, and the sine expansion contains only odd powers of $x$ divided by odd factorials.</span>
+    </div>
+    <div class="proof">
+        Consider that the <a href="https://en.wikipedia.org/wiki/Taylor_series">Taylor series</a> expansion of $f(x)$ about the point $a$ is $f(a)+f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + \cdots$. The Maclaurin expansion is the Taylor series centered at $a=0$, so the Maclaurin expansion of $f(x)$ is $f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + \cdots$.
+        Let $f(x) = \cos x$. We know that
+        <label for="sn-5" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-5" class="sidenote-toggle" />
+        <span class="sidenote">Note here that the cycle length is 4, which is the same as that of the powers of $i$.
+            \begin{matrix}
+            i^0 & = & 1\\
+            i^1 & = & i\\
+            i^2 & = & -1\\
+            i^3 & = & -i\\
+            i^4 & = & 1\\
+            \end{matrix}
+        </span>
+        \begin{matrix}
+        f(x) & = & \cos x\\
+        f'(x) & = & -\sin x\\
+        f''(x) & = & -\cos x\\
+        f'''(x) & = & \sin x\\
+        f''''(x) & = & \cos x\\
+        \vdots & \vdots & \vdots
+        \end{matrix}
+        Using that $\cos(0) = 1$ and $\sin(0) = 0$, we have that the first few terms of the Maclaurin series are $1 + 0x -\frac{x^2}{2} + 0x^3 + \frac{x^4}{4!}$. Now, we write the pattern:
+        \begin{equation}
+        \cos x = \sum_{n=0}^{\infty} \frac{(-1)^n}{2n!} x^{2n}
+        \end{equation}
+
+        Any odd power will have $sin(0)=0$ and so can be ignored. Hence, we use only the even numbers $2n$ in our summation. Using that $f(x)=\cos x$ and $f''(x) = -\cos x$, we note that the signs alternate in each term, so we also have $(-1)^n$ in the summation.
+        <p>
+            Similar reasoning holds for $\sin x$.
+        </p>
+    </div>
+
+    <p>
+        Lastly, there are also two trigonometric identities that I have always found interesting, in terms of symmetry.
+    </p>
+
+    <div class="lemma"> Angle sum and difference
+        \begin{align}
+        \sin(\alpha + \beta) &= \sin(\alpha) \cos(\beta) + \cos(\alpha) \sin(\beta)\\
+        \sin(\alpha - \beta) &= \sin(\alpha) \cos(\beta) - \cos(\alpha) \sin(\beta)\\
+        \cos(\alpha + \beta) &= \cos(\alpha) \cos(\beta) - \sin(\alpha) \sin(\beta)\\
+        \cos(\alpha - \beta) &= \cos(\alpha) \cos(\beta) + \sin(\alpha) \sin(\beta)\\
+        \end{align}
+    </div>
+    <p>
+        I won't prove these identities here, but I will write about the symmetries. Note that the $\sin$ identities have matching signs; that is, if there is a $+$ on the left side, there's a $+$ on the right side. However, the multiplications are mismatched in that $\sin$ is multiplied by $\cos$ and vice versa.
+    </p>
+    <p>
+        On the other hand, the $\cos$ identities have matching multiplication in that $\cos$ multiplies $\cos$, and $\sin$ multiplies $\sin$. The signs, however, are mismatched.
+    </p>
+    
 </body>
 
 </html>
