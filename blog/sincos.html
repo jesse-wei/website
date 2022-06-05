@@ -60,8 +60,8 @@
     <img src="/img/blog/sincos-identity-90.jpg" alt="geometric proof of separation by 90 degrees" class="center">
     <p>
         Here's an embedded Desmos graph where you can see the identity for yourself:
-        <label for="sn-6" class="sidenote-toggle sidenote-number"></label>
-        <input type="checkbox" id="sn-6" class="sidenote-toggle" />
+        <label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-1" class="sidenote-toggle" />
         <span class="sidenote">You can press the ▶️ on the left to view the animation.</span>
     </p>
     <iframe class="center" src="https://www.desmos.com/calculator/csddcvviru" style="border:0px #ffffff none;"
@@ -70,18 +70,20 @@
     <p>
         Back to <b>Lemma 1</b>, why should the basic definition be limited to a static right triangle? What about a
         dynamic right triangle, perhaps one like this:
-        <label for="sn-1" class="sidenote-toggle sidenote-number"></label>
-        <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+        <label for="sn-2" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-2" class="sidenote-toggle" />
         <span class="sidenote">Note that there is no magic going on here. There's nothing in Desmos that specifically
             generates an arbitrary right triangle - this graph uses only the sine and cosine knowledge shown
             above!</span>
     </p>
-    <iframe class="center" src="https://www.desmos.com/calculator/ko2y1gnr7d" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe>
+    <iframe class="center" src="https://www.desmos.com/calculator/ko2y1gnr7d" style="border:0px #ffffff none;"
+        name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="600px"
+        allowfullscreen></iframe>
     <p>
         In this graph, the x coordinates always involve $\cos \theta$, and the y coordinates always involve $\sin
         \theta$. Thinking of the black line as a vector
-        <label for="sn-2" class="sidenote-toggle sidenote-number"></label>
-        <input type="checkbox" id="sn-2" class="sidenote-toggle" />
+        <label for="sn-3" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-3" class="sidenote-toggle" />
         <span class="sidenote">Since we can vary its length $r$ and its angle $t$</span>
         , we see that to get the horizontal component of the vector, we multiply its length by $\cos \theta$. To get its
         vertical component, we multiply its length by $\sin \theta$. In other words, $\cos \theta$ projects to $x$, and
@@ -99,8 +101,8 @@
         To make this idea even more clear, you should take a look at this <a
             href="https://www.khanacademy.org/computer-programming/circle/4597064320155648">circle animation on Khan
             Academy</a>.
-        <label for="sn-3" class="sidenote-toggle sidenote-number"></label>
-        <input type="checkbox" id="sn-3" class="sidenote-toggle" />
+        <label for="sn-4" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-4" class="sidenote-toggle" />
         <span class="sidenote"><img src="/img/blog/sincos-animation.jpg"></span>
     </p>
     <h2>Algebra</h2>
@@ -112,20 +114,27 @@
     <div class="lemma">
         $\cos x = 1 - \frac{x^2}{2} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots$, and $\sin x = x - \frac{x^3}{3!} +
         \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots$
-        <label for="sn-4" class="sidenote-toggle sidenote-number"></label>
-        <input type="checkbox" id="sn-4" class="sidenote-toggle" />
+        <label for="sn-5" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-5" class="sidenote-toggle" />
         <span class="sidenote">Note that the cosine expansion contains only even powers of $x$ (including $x^0 = 1$)
             divided by even factorials, and the sine expansion contains only odd powers of $x$ divided by odd
             factorials.</span>
     </div>
     <div class="proof">
-        Consider that the <a href="https://en.wikipedia.org/wiki/Taylor_series">Taylor series</a> expansion of $f(x)$
-        about the point $a$ is $f(a)+f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + \cdots$. The
-        Maclaurin expansion is the Taylor series centered at $a=0$, so the Maclaurin expansion of $f(x)$ is $f(0) +
-        f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + \cdots$.
+        Consider that the <a href="https://en.wikipedia.org/wiki/Taylor_series">Taylor series</a>
+        <label for="sn-6" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-6" class="sidenote-toggle" />
+        <span class="sidenote">I might write an article about the Taylor series! For now, the tl;dr is that the Taylor
+            expansion of a complicated function is a highly accurate approximation that is made up of less complicated
+            polynomial terms, which are much easier to work with.</span>
+        expansion of $f(x)$
+        about the point $a$ is $$f(a)+f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + \cdots +
+        \frac{f^{(n)}}{n!}(x-a)^n + \cdots$$
+        The Maclaurin expansion is the Taylor series centered at $a=0$, so the Maclaurin expansion of $f(x)$ is $$f(0) +
+        f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + \cdots + \frac{f^{(n)}}{n!}x^n + \cdots$$
         Let $f(x) = \cos x$. We know that
-        <label for="sn-5" class="sidenote-toggle sidenote-number"></label>
-        <input type="checkbox" id="sn-5" class="sidenote-toggle" />
+        <label for="sn-6" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-6" class="sidenote-toggle" />
         <span class="sidenote">Note here that the cycle length is 4, which is the same as that of the powers of $i$.
             \begin{matrix}
             i^0 & = & 1\\
@@ -150,8 +159,9 @@
         \cos x = \sum_{n=0}^{\infty} \frac{(-1)^n}{2n!} x^{2n}
         \end{equation}
 
-        Any odd power will have $sin(0)=0$ and so can be ignored. Hence, we use only the even numbers $2n$ in our
-        summation. Using that $f(x)=\cos x$ and $f''(x) = -\cos x$, we note that the signs alternate in each term, so we
+        Any odd power will have $\sin(0)=0$ and so can be ignored. Hence, we use only the even numbers $2n$ in our
+        summation. Using that $f(x)=\cos x$ and $f''(x) = -\cos x$, we note that the signs alternate each (even) term,
+        so we
         also have $(-1)^n$ in the summation.
         <p>
             Similar reasoning holds for $\sin x$.
