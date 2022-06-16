@@ -37,7 +37,13 @@
         <span class="sidenote">The answer's yes, of course.</span>?
     </p>
     <p>
-        Consider a simpler case, as we should usually do when something appears difficult. What is the coefficient of
+        Consider the following situation: you have 5 boxes, each with one $x$ and $y$, and you have to choose one
+        element from each box. How many different ways are there to pick out 2 $x$'s and 3 $y$'s? In actuality, this is
+        precisely the same question.
+    </p>
+    <p>
+        Now consider a simpler case, as we should usually do when something appears difficult. What is the coefficient
+        of
         the $x^5$ term? Clearly, it is 1. We know that because there's only one way to get $x^5$: pick out an $x$ from
         each one of the 5 binomials.
     </p>
@@ -58,7 +64,7 @@
     </p>
     <p>
         The binomial coefficient naturally has the symmetry $\binom{n}{k}=\binom{n}{n-k}$, which tells us that if the
-        coefficient of $x^2y^3$ is $\binom{5}{2}$, and the coefficient of $x^3y^2$ is $\binom{5}{3}$, then those two
+        coefficient of $x^2y^3$ is $\binom{5}{2}$ (from 5 boxes pick 2 $x$), and the coefficient of $x^3y^2$ is $\binom{5}{3}$ (from 5 boxes pick 3 $x$), then those two
         numbers are the same. After all, by inspection, why wouldn't they be? The number of ways to pick out 2 $x$'s
         from 5 of $(x+y)$ is the same as the number of ways to pick out 2 $y$'s.
     </p>
@@ -105,34 +111,45 @@
         $\binom{3}{1}+\binom{3}{2}=\binom{4}{2}$? Why?
     </p>
     <p>
-        First, let's set up the theorem. Let $\binom{n}{k}$ represent the $k^{\text{th}}$ entry of the $n^{\text{th}}$ row of the binomial coefficient form of Pascal's triangle. Since each number in the numerical Pascal's triangle is the sum of the two numbers above, we claim that $\binom{n}{k}=\binom{n-1}{k-1}+\binom{n-1}{k}$.
+        First, let's set up the theorem. Let $\binom{n}{k}$ represent the $k^{\text{th}}$ entry of the $n^{\text{th}}$
+        row of the binomial coefficient form of Pascal's triangle. Since each number in the numerical Pascal's triangle
+        is the sum of the two numbers above, we claim that $\binom{n}{k}=\binom{n-1}{k-1}+\binom{n-1}{k}$.
         <label for="sn-5" class="sidenote-toggle sidenote-number"></label>
         <input type="checkbox" id="sn-5" class="sidenote-toggle" />
-        <span class="sidenote">You should check that this statement does, indeed, refer to an arbitrary entry and the two entries above it. You could confirm using the $\binom{4}{2}$ example.</span>
+        <span class="sidenote">You should check that this statement does, indeed, refer to an arbitrary entry and the
+            two entries above it. You could confirm using the $\binom{4}{2}$ example.</span>
     </p>
     <div class="lemma">$\binom{n}{k}=\binom{n-1}{k-1}+\binom{n-1}{k}$</a></div>
     <div class="proof">
         $$
         \begin{aligned}
-            \binom{n-1}{k-1} + \binom{n-1}{k} &= \frac{(n-1)!}{(k-1)!(n-k)!} + \frac{(n-1)!}{k!(n-k-1)!}\\
-            &= (n-1)!\left[\frac{1}{(k-1)!(n-k)!} + \frac{1}{k!(n-k-1)!}\right]\\
-            &= (n-1)!\left[\frac{k}{k!(n-k)!} + \frac{n-k}{k!(n-k)!}\right]\\
-            &= (n-1)!\left(\frac{n}{k!(n-k)!}\right)\\
-            &= \frac{n!}{k!(n-k)!}\\
-            &= \binom{n}{k}
+        \binom{n-1}{k-1} + \binom{n-1}{k} &= \frac{(n-1)!}{(k-1)!(n-k)!} + \frac{(n-1)!}{k!(n-k-1)!}\\
+        &= (n-1)!\left[\frac{1}{(k-1)!(n-k)!} + \frac{1}{k!(n-k-1)!}\right]\\
+        &= (n-1)!\left[\frac{k}{k!(n-k)!} + \frac{n-k}{k!(n-k)!}\right]\\
+        &= (n-1)!\left(\frac{n}{k!(n-k)!}\right)\\
+        &= \frac{n!}{k!(n-k)!}\\
+        &= \binom{n}{k}
         \end{aligned}
         $$
     </div>
     <p>
-        You can also head to <a href="https://en.wikipedia.org/wiki/Pascal%27s_rule#Combinatorial_proof">Wikipedia</a> for a very good combinatorial reasoning (no algebra) proof. I'll prove another cool identity using combinatorial reasoning:
+        You can also head to <a href="https://en.wikipedia.org/wiki/Pascal%27s_rule#Combinatorial_proof">Wikipedia</a>
+        for a very good combinatorial reasoning (no algebra) proof. I'll prove another cool identity using combinatorial
+        reasoning:
     </p>
     <div class="lemma">$k\binom{n}{k}=n\binom{n-1}{k-1}$</div>
-    <div class="proof">Let $n$ be the total number of people, and suppose we want to pick out a group of $k$ people with one special person in the group, perhaps a president. There are two ways for us to accomplish this:
+    <div class="proof">Let $n$ be the total number of people, and suppose we want to pick out a group of $k$ people with
+        one special person in the group, perhaps a president. There are two ways for us to accomplish this:
         <p>
-            The first way is to pick out $k$ people from $n$ people, and then pick out one person from the group. There are then $k$ ways to pick the president from the group of $k$. By the <a href="https://www.khanacademy.org/math/ap-statistics/probability-ap/probability-multiplication-rule/a/general-multiplication-rule">multiplication rule</a>, there are $k\binom{n}{k}$ ways to do this.
+            The first way is to pick out $k$ people from $n$ people, and then pick out one person from the group. There
+            are then $k$ ways to pick the president from the group of $k$. By the <a
+                href="https://www.khanacademy.org/math/ap-statistics/probability-ap/probability-multiplication-rule/a/general-multiplication-rule">multiplication
+                rule</a>, there are $k\binom{n}{k}$ ways to do this.
         </p>
         <p>
-            The second way is to first pick out a president to be in the group from all $n$ people, and there are $n$ such possible presidents. Then, from the remaining $n-1$ people, we pick out $k-1$ people (because the president is already included). There are $n\binom{n-1}{k-1}$ ways to do this.
+            The second way is to first pick out a president to be in the group from all $n$ people, and there are $n$
+            such possible presidents. Then, from the remaining $n-1$ people, we pick out $k-1$ people (because the
+            president is already included). There are $n\binom{n-1}{k-1}$ ways to do this.
         </p>
     </div>
 </body>
