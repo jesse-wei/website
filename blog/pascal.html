@@ -64,7 +64,8 @@
     </p>
     <p>
         The binomial coefficient naturally has the symmetry $\binom{n}{k}=\binom{n}{n-k}$, which tells us that if the
-        coefficient of $x^2y^3$ is $\binom{5}{2}$ (from 5 boxes pick 2 $x$), and the coefficient of $x^3y^2$ is $\binom{5}{3}$ (from 5 boxes pick 3 $x$), then those two
+        coefficient of $x^2y^3$ is $\binom{5}{2}$ (from 5 boxes pick 2 $x$), and the coefficient of $x^3y^2$ is
+        $\binom{5}{3}$ (from 5 boxes pick 3 $x$), then those two
         numbers are the same. After all, by inspection, why wouldn't they be? The number of ways to pick out 2 $x$'s
         from 5 of $(x+y)$ is the same as the number of ways to pick out 2 $y$'s.
     </p>
@@ -139,9 +140,14 @@
     </p>
     <div class="lemma">$k\binom{n}{k}=n\binom{n-1}{k-1}$</div>
     <div class="proof">Let $n$ be the total number of people, and suppose we want to pick out a group of $k$ people with
-        one special person in the group, perhaps a president. There are two ways for us to accomplish this:
+        one special person in the group, perhaps a president. There are two ways for us to accomplish this: (1) select
+        the group first and then within the group, select a president or (2) select a president among all people, then
+        form the rest of the group.
+        <label for="sn-6" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-6" class="sidenote-toggle" />
+        <span class="sidenote">This should make intuitive sense.</span>
         <p>
-            The first way is to pick out $k$ people from $n$ people, and then pick out one person from the group. There
+            The first way involves first picking out $k$ people from $n$ people. There
             are then $k$ ways to pick the president from the group of $k$. By the <a
                 href="https://www.khanacademy.org/math/ap-statistics/probability-ap/probability-multiplication-rule/a/general-multiplication-rule">multiplication
                 rule</a>, there are $k\binom{n}{k}$ ways to do this.
@@ -149,7 +155,10 @@
         <p>
             The second way is to first pick out a president to be in the group from all $n$ people, and there are $n$
             such possible presidents. Then, from the remaining $n-1$ people, we pick out $k-1$ people (because the
-            president is already included). There are $n\binom{n-1}{k-1}$ ways to do this.
+            president is already included in the group). There are $n\binom{n-1}{k-1}$ ways to do this.
+        </p>
+        <p>
+            Hence, by combinatorial reasoning, $k\binom{n}{k}=n\binom{n-1}{k-1}$.
         </p>
     </div>
 </body>
