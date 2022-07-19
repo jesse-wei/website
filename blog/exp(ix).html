@@ -54,15 +54,26 @@
         <input type="checkbox" id="sn-3" class="sidenote-toggle" />
         <span class="sidenote">We have shown that \(e^{ix}\) is a complex number \(a+bi\), where \(a=\cos x\) and
             \(b=\sin x\). The magnitude of a complex number is its distance, on the complex plane, from \((0, 0)\). We
-            find this distance using the distance formula, as shown in the ACT question.</span>
+            find this distance using the distance formula.</span>
         $$|e^{ix}| = |\cos(x) + i\sin(x)\:| = \sqrt{\cos^2(x) + \sin^2(x)} = \sqrt{1} = 1$$
     </p>
     <p>
-        <img class="resize center-horizontal" src="/img/blog/magnitude-complex-num.jpeg" alt="ACT 74H Math # 57">
+        The significance of this result is that on the complex plane
+        <label for="sn-4" class="sidenote-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-4" class="sidenote-toggle" />
+        <span class="sidenote">The x axis represents all real numbers \(\mathbb{R}\) and the y axis represents all imaginary numbers \(bi\) for \(b \in \mathbb{R}\).</span>
+        , \(e^{i\theta}\) represents a point that is a distance of one unit away from the origin \((0, 0)\). Varying \(\theta\) from \(0\) to \(2 \pi\) results in the unit circle.
     </p>
+
     <p>
-        <img class="resize center-horizontal" src="/img/blog/magnitude-complex-num-sol.jpeg"
-            alt="ACT 74H Math #57 Solution">
+        The \(\theta\) parameter measures the counterclockwise angle the point makes with the positive x axis. At this point, since we're determining a point's position by its angle, we should wonder how this could be connected with polar coordinates.
+    </p>
+
+    <p>
+        A polar coordinate requires an extra parameter, \(r\). Otherwise, we are stuck with only the unit circle and can't represent points a distance of, for example, 2 units from the origin. We simply add that parameter \(r\) by multiplying:
+        $$
+        \exists r \in \mathbb{R}^{\geq 0}, \; \exists \theta \in [0, 2\pi) \textrm{ such that } |r|e^{i\theta} = |r|(\cos \theta + i \sin \theta) = x + iy \quad \forall x,y \in \mathbb{R}
+        $$
     </p>
 
     <div class="lemma">By differential equation \(\frac{df}{dx}=if(x)\)</div>
